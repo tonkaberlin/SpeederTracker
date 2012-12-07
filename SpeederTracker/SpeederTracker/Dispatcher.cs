@@ -9,26 +9,20 @@ namespace SpeederTracker
 {
     class Dispatcher
     {
-        List<Car> cars = new List<Car>();
-        Random r = new Random();
-        public Dispatcher()
+        List<Car> cars;
+        DatabaseManager dman;
+        public Dispatcher(List<Car> c, DatabaseManager d)
         {
-            for(int i = 0; i < 3; i++)
-                cars.Add(new Car(r.Next(0, 1000)));
+            cars = c;
+            dman = d;
         }
 
         public void NotifySpeeder(int cameralocation, double speed, File image)
         {
-
-        }
-
-        public void StoreInDatabase()
-        {
-            //Call the method to store stuff in the database
-        }
-
-        public void NotifyCar(int cameralocation, double speed, File image)
-        {
+            //Send to database
+            dman.submitToDatabase(cameralocation, speed);
+            
+            //Send to car
             Car c = cars.OrderBy(x => x.Location - cameralocation).First();
             c.speeder(cameralocation, speed, image);
         }
