@@ -24,7 +24,7 @@ public class NotificationPanel : Panel
     Label closelabel;
 
 	public NotificationPanel(int position, String location, int distance, 
-        int speedlim, int speed, int eta)
+        int speedlim, int speed)
         : base()
 	{
         this.position = position;

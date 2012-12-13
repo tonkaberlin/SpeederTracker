@@ -36,17 +36,17 @@ namespace SpeederTracker
             Environment.Exit(0);
         }
 
-        //Runs a simulation of 
+        //Runs a simulation of a new notification.
         private void runSimulationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Simulation(1);
-            setNotificationPanel("I-81 NB, Marker 120", 80, 60, 26, 25); 
+            Form configbox = new Config(this);
+            configbox.Show();
         }
 
         //Runs a notification Test
         private void runNotificationTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            setNotificationPanel("I-81 SB, Marker 109", 90, 65, 5, 25);
+            setNotificationPanel("I-81 SB, Marker 109", 90, 65, 5);
             
             //taskbarNotifier.Show("TitleText", "ContentText", 500, 3000, 500);
         }
@@ -150,8 +150,8 @@ namespace SpeederTracker
         }
 
         //Set a new Notification panel.
-        private void setNotificationPanel(string location, int speed, int speedlim, 
-            int distance, int eta)
+        public void setNotificationPanel(string location, int speed, int speedlim, 
+            int distance)
         {
             if (panels.Count == 0)
             {
@@ -159,7 +159,7 @@ namespace SpeederTracker
             }
 
             NotificationPanel newpanel = new NotificationPanel(panels.Count, location,
-                distance, speedlim, speed, eta);
+                distance, speedlim, speed);
             panels.Insert(0, newpanel);
             this.flowLayoutPanel1.Controls.Add(newpanel);
             reorderPanels();
