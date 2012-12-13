@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SpeederTracker")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyDescription("Identifies speeding automotives on highways linked to the Interstate 81 VDOT traffic camera network.\n Developed by Andrew Berlin, Brian Farrell, Brad Wilson, & Darien Foster")]
+[assembly: AssemblyConfiguration("Prototype")]
+[assembly: AssemblyCompany("Virginia Tech")]
 [assembly: AssemblyProduct("SpeederTracker")]
-[assembly: AssemblyCopyright("Copyright ©  2012")]
+[assembly: AssemblyCopyright("Copyright © CS4634 Group F Fall 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.5.2.*")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
